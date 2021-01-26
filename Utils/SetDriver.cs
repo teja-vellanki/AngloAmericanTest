@@ -1,10 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Microsoft.Edge.SeleniumTools;
-using AngloAmericanTest.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AngloAmericanTest.Utils
 {

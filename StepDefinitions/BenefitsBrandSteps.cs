@@ -27,9 +27,8 @@ namespace AngloAmericanTest.StepDefinitions
             _scenarioContext = scenarioContext;
         }
 
-
-        [When(@"I reach the ""(.*)""")]
-        public void WhenIReachThe(string p0)
+        [Then(@"I should reach the ""(.*)""")]
+        public void ThenIShouldReachThe(string p0)
         {
             string actualTitle = _benefitsbrandpage.GetTitle();
             if (!actualTitle.Contains("Benefit"))

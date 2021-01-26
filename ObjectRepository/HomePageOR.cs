@@ -30,22 +30,6 @@ namespace  AngloAmericanTest.ObjectRepository
         {
             get { return _driver.FindElement(By.Id("search-submit")); }
         }
-
-        public IList<IWebElement> CookieOptions
-        {
-            get { return _driver.FindElements(By.CssSelector("[id = 'brandcarousal']")); }
-        }
-
-        public IList<IWebElement> HeaderProfileSignIn
-        { 
-            get { return _driver.FindElements(By.CssSelector("ul[data-testid='header-profile'] li [data-testid='header-profile-sign-in']")); }
-        }
-
-        public IList<IWebElement> HeaderProfileAccount
-        {
-            get { return _driver.FindElements(By.CssSelector("a[data-testid='header-profile-account']")); }
-        }
-
         
     }
 }

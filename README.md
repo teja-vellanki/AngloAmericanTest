@@ -13,8 +13,8 @@ Framework: PageObject model with BDD
 
 Few things i wanted to highlight to run the tests once you clone into your machine.
 
-A. Please create a folder called "webdrivers" in C drive  and download chromedriver.exe and place it in below location
-Webdrivers Location: C:\webdrivers
+A. The folder should be part of repo but if this is missing please create a folder called "Drivers" in repo  and download chromedriver.exe and place it in below location
+Location: C:\AngloAmericanTest\Drivers. 
 
 B. Configure local.runsettings file before executing the tests.
 

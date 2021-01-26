@@ -20,36 +20,7 @@ namespace AngloAmericanTest.Pages
             _seleniumHelper = seleniumHelper;
         }
 
-        public IWebElement SaveMyPreferences => CookieOptions[0];
-        public IWebElement AcceptAllCookies => CookieOptions[1];
-
-        public IWebElement SignIn => HeaderProfileSignIn[0];
-        public IWebElement Account => HeaderProfileAccount[0];
-  
-
-        public void EnterSearchValue(string searchValue)
-        {
-            SearchBar.SendKeys(searchValue);
-        }
-
-        public void SelectValueFromSearchSuggestions(string value)
-        {
-            SearchBar.SendKeys(Keys.ArrowDown);
-            SearchBar.SendKeys(Keys.Escape);
-        }
-
-        public void ClickSearchButton()
-        {
-            SearchButton.Click();
-        }
-
  
-
-        public void ClickMyAccount()
-        {
-            Account.Click();
-        }
-
         public void ClickOnBrandName()
         {
             FirstBrand.Click();
