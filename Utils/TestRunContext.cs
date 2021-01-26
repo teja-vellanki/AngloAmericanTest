@@ -8,6 +8,9 @@ using AngloAmericanTest.Utils;
 namespace AngloAmericanTest
 {
     [Binding]
+    /// <summary>
+    ///  This class performs and helps as Hooks to drive before and after scenario
+    /// </summary>
     public class TestRunContext : Steps
     {
         private IWebDriver _driver;
@@ -20,6 +23,7 @@ namespace AngloAmericanTest
             _setDriver = setDriver;
         }
 
+        //Before scenario hook to set up browser and set default timeout
         [BeforeScenario]
         public void BeforeScenario()
         {
@@ -28,6 +32,7 @@ namespace AngloAmericanTest
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
+        //After scenario hook to dispose the driver after scenario
         [AfterScenario]
         public void AfterScenario()
         {

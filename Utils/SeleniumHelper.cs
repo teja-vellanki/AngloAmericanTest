@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AngloAmericanTest.Utils
 {
+    /// <summary>
+    ///  This class has all the selenium helper actions
+    /// </summary>
     public class SeleniumHelper
     {
         public readonly IWebDriver _driver;
@@ -18,6 +21,7 @@ namespace AngloAmericanTest.Utils
             });
         }
 
+        //This method helps to select from the drop down list using value
         public void SelectValueFromList(IList<IWebElement> element, string value)
         {
             foreach (var item in element)
@@ -29,24 +33,22 @@ namespace AngloAmericanTest.Utils
                 }
             }
         }
+
+        //This method helps to select from the drop down list using text
         public void SelectValueFromDropDownAsText(IWebElement element, string value)
         {
             var selectElement = new SelectElement(element);
             selectElement.SelectByText(value);
         }
 
+        //This method helps to select from the drop down list using index
         public void SelectValueFromDropDownAsIndex(IWebElement element, int value)
         {
             var selectElement = new SelectElement(element);
             selectElement.SelectByIndex(value);
         }
 
-        public int GetRandomNumber()
-        {
-            Random random = new Random();
-            return random.Next(1, 5000000);
-        }
-
+        // //This method helps to wait until the expected condition is met
         public bool WaitForElementToBeDisplayed(IWebElement element, string objectName)
         {
             try

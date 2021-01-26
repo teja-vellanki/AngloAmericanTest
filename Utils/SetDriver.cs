@@ -4,12 +4,16 @@ using Microsoft.Edge.SeleniumTools;
 
 namespace AngloAmericanTest.Utils
 {
+    /// <summary>
+    ///  This class performs an important function.
+    /// </summary>
     public class SetDriver
     {
         public IWebDriver GetDriver(string browser)
         {
             switch (browser.ToLower())
             {
+                //Using switch acase to run tests on specific browser
                 case "chrome":
                     var chromeOptions = new ChromeOptions();
                     chromeOptions.AddArgument("--start-mazimised");

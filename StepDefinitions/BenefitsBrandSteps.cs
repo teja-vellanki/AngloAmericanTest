@@ -7,6 +7,9 @@ using AngloAmericanTest.Utils;
 namespace AngloAmericanTest.StepDefinitions
 {
     [Binding]
+    /// <summary>
+    ///  This class performs all the step actions of the Benefits Band Page
+    /// </summary>
     public class BenefitsBrandSteps
     {
         public IWebDriver _driver;
@@ -22,7 +25,9 @@ namespace AngloAmericanTest.StepDefinitions
         [Then(@"I should reach the ""(.*)""")]
         public void ThenIShouldReachThe(string p0)
         {
+            //Resding the title of the Page
             string actualTitle = _benefitsbrandpage.GetTitle();
+            //Validating the title to make sure we reach the benefit brand page
             if (!actualTitle.Contains("Benefit"))
             {
                 Assert.Fail("Search Title does not contains expected title " + actualTitle);
@@ -33,8 +38,11 @@ namespace AngloAmericanTest.StepDefinitions
         [When(@"I add the sale product to the basket")]
         public void WhenIAddTheSaleProductToTheBasket()
         {
+            //Declaring a context Key Value pair to set the sale price
             _scenarioContext["saleprice"]= _benefitsbrandpage.GetSalePrice();
+            //Declaring a context Key Value pair to set the original price
             _scenarioContext["originalprice"] = _benefitsbrandpage.GetOriginalPrice();
+            //Adding Sale product to the basket
             _benefitsbrandpage.SaleProductAddToBasket();
 
         }
@@ -42,6 +50,7 @@ namespace AngloAmericanTest.StepDefinitions
         [When(@"I click on basket")]
         public void WhenIClickOnBasket()
         {
+            //Clicking on basket to reach the basket page
             _benefitsbrandpage.ClickOnBasket();
         }
 

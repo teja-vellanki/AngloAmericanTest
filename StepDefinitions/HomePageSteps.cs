@@ -7,6 +7,9 @@ using NUnit.Framework;
 namespace AngloAmericanTest.StepDefinitions
 {
     [Binding]
+    /// <summary>
+    ///   This class performs all the step actions of the Home Page  
+    /// </summary>
     public class HomePageSteps
     {
         private readonly BasePage _basePage;
@@ -25,6 +28,7 @@ namespace AngloAmericanTest.StepDefinitions
         [Given(@"I navigate to homepage")]
         public void GivenINavigateToHomepage()
         {
+            //Navigating to the home page
             _basePage.NavigateToHomePage(Helper.GetUrl);
         }
 
@@ -32,12 +36,14 @@ namespace AngloAmericanTest.StepDefinitions
         [When(@"I click on brand ""(.*)""")]
         public void WhenIClickOnBrand(string brandname)
         {
+            //Click on brand with brand name
             homePage.ClickOnBrandName(brandname);
         }
 
         [When(@"I read all the brands available")]
         public void WhenIReadAllTheBrandsAvailable()
         {
+            //Creating object of all the brand names
             _nameofthebrand.BrandsList =  homePage.ReadAllBrandNames();
         }
 
@@ -47,6 +53,7 @@ namespace AngloAmericanTest.StepDefinitions
         {
             int i = 0;
             int j = 0;
+            //Running for loop to Assert the brand titles with expected list
             foreach(string brandname in _nameofthebrand.BrandsList)
             {
                     Assert.AreEqual(table.Rows[i][j], brandname);

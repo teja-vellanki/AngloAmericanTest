@@ -104,6 +104,7 @@ C:\AngloAmericanTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.Comm
 C:\AngloAmericanTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\AngloAmericanTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\AngloAmericanTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\AngloAmericanTest\obj\Debug\netcoreapp3.1\AngloAmericanTest.csprojAssemblyReference.cache
 C:\AngloAmericanTest\obj\Debug\netcoreapp3.1\AngloAmericanTest.AssemblyInfoInputs.cache
 C:\AngloAmericanTest\obj\Debug\netcoreapp3.1\AngloAmericanTest.AssemblyInfo.cs
 C:\AngloAmericanTest\obj\Debug\netcoreapp3.1\AngloAmericanTest.csproj.CoreCompileInputs.cache
