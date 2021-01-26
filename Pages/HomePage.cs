@@ -25,10 +25,7 @@ namespace AngloAmericanTest.Pages
 
         public IWebElement SignIn => HeaderProfileSignIn[0];
         public IWebElement Account => HeaderProfileAccount[0];
-        public bool VerifyLabel()
-        {
-           return CompanyLabel.Displayed;
-        }
+  
 
         public void EnterSearchValue(string searchValue)
         {

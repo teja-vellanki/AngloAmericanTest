@@ -31,11 +31,6 @@ namespace  AngloAmericanTest.ObjectRepository
             get { return _driver.FindElement(By.Id("search-submit")); }
         }
 
-        public IWebElement CompanyLabel
-        {
-            get { return _driver.FindElement(By.CssSelector("[aria-label='Zoopla']")); }
-        }
-
         public IList<IWebElement> CookieOptions
         {
             get { return _driver.FindElements(By.CssSelector("[id = 'brandcarousal']")); }
