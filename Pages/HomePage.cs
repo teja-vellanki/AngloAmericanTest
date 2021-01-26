@@ -1,29 +1,30 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using TechTalk.SpecFlow;
 using AngloAmericanTest.ObjectRepository;
-using AngloAmericanTest.Utils;
 
 namespace AngloAmericanTest.Pages
 {
     public class HomePage : HomePageOR
     {
-        private readonly ScenarioContext _scenarioContext;
-        private readonly SeleniumHelper _seleniumHelper;
-        public HomePage(IWebDriver driver, ScenarioContext scenarioContext, SeleniumHelper seleniumHelper) : base(driver)
+ 
+        public HomePage(IWebDriver driver) : base(driver)
         {
-            _scenarioContext = scenarioContext;
-            _seleniumHelper = seleniumHelper;
+
         }
 
- 
-        public void ClickOnBrandName()
+        public void ClickOnBrandName(string brandname)
         {
-            FirstBrand.Click();
+            IList<IWebElement> _listofbrands = ListOfBrands;
+            foreach (IWebElement element in _listofbrands)
+            {
+                if(element.GetAttribute("alt")==brandname)
+                {
+                    element.Click();
+                    break;
+                }
+            }
+
         }
 
         public string[] ReadAllBrandNames()

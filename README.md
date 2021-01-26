@@ -1,8 +1,5 @@
 #Anglo American Tech Challenge - Quality Team
 
-Hi,
-Thanks for detailed description about the technical test. 
-
 Below are the tools that i have used to setup a basic framework and write the tests
 Specflow
 Nunit
@@ -18,7 +15,7 @@ Location: C:\AngloAmericanTest\Drivers.
 
 B. Configure local.runsettings file before executing the tests.
 
-I generally don't include Drivers folder in my framework and push it to the git as it is not a good practise, but i have made an exception to include this time as you don't have to google to download(if it is not already installed).
+I generally don't include Drivers folder in my framework and push it to the git as it is not a good practise, but i have made an exception to include this will make the framework run wiithiut any issues.
 
 All the project dependencies are included, however below is the list.
 1. DotNetSeleniumExtras.WaitHelpers
@@ -34,3 +31,5 @@ All the project dependencies are included, however below is the list.
 11.SpecFlow
 12.Specflow.Nunit
 13.Specflow.Tools.MsBuild.Generation
+
+Open the test explorer to run all the tests. 

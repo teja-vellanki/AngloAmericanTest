@@ -1,7 +1,5 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using System;
-using System.Threading;
 using TechTalk.SpecFlow;
 using AngloAmericanTest.Pages;
 using AngloAmericanTest.Utils;
@@ -11,19 +9,13 @@ namespace AngloAmericanTest.StepDefinitions
     [Binding]
     public class BenefitsBrandSteps
     {
-        private readonly BasePage _basePage;
         public IWebDriver _driver;
-        private readonly HomePage homePage;
         private BenefitsBrandPage _benefitsbrandpage;
-        private readonly SeleniumHelper _seleniumHelper;
         private readonly ScenarioContext _scenarioContext;
 
-        public BenefitsBrandSteps(BasePage basePage, HomePage homePage, BenefitsBrandPage benefitsbrandpage, SeleniumHelper seleniumHelper, ScenarioContext scenarioContext)
+        public BenefitsBrandSteps(BenefitsBrandPage benefitsbrandpage, ScenarioContext scenarioContext)
         {
-            _basePage = basePage;
-            this.homePage = homePage;
             _benefitsbrandpage = benefitsbrandpage;
-            _seleniumHelper = seleniumHelper;
             _scenarioContext = scenarioContext;
         }
 
@@ -43,24 +35,15 @@ namespace AngloAmericanTest.StepDefinitions
         {
             _scenarioContext["saleprice"]= _benefitsbrandpage.GetSalePrice();
             _scenarioContext["originalprice"] = _benefitsbrandpage.GetOriginalPrice();
-            Console.WriteLine("tete" + _scenarioContext["saleprice"]);
             _benefitsbrandpage.SaleProductAddToBasket();
 
         }
 
-        [When(@"I click on basket in the benefits page")]
-        public void WhenIClickOnBasketInTheBenefitsPage()
+        [When(@"I click on basket")]
+        public void WhenIClickOnBasket()
         {
             _benefitsbrandpage.ClickOnBasket();
         }
-
-    
-
-
-
-
-
-
 
     }
 }

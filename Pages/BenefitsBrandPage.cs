@@ -1,7 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using AngloAmericanTest.ObjectRepository;
 using AngloAmericanTest.Utils;
 
@@ -9,13 +6,8 @@ namespace AngloAmericanTest.Pages
 {
     public class BenefitsBrandPage : BenefitsBrandOR
     {
-
-        private readonly SeleniumHelper _seleniumHelper;
-        private readonly HomePage _homePage;
-        public BenefitsBrandPage(IWebDriver driver, SeleniumHelper seleniumHelper, HomePage homePage) : base(driver)
+        public BenefitsBrandPage(IWebDriver driver) : base(driver)
         {
-            _seleniumHelper = seleniumHelper;
-            _homePage = homePage;
         }
 
         public string GetTitle()
@@ -24,16 +16,28 @@ namespace AngloAmericanTest.Pages
             return title;
         }
 
-        public string GetSalePrice()
+        public double GetSalePrice()
         {
-            return SaleProductNewPrice.Text;
+            string saleprice = SaleProductNewPrice.Text;
+            var charsToRemove = new string[] { "$" };
+            foreach (var c in charsToRemove)
+            {
+                saleprice = saleprice.Replace(c, string.Empty);
+            }
+            return double.Parse(saleprice);
         }
 
-        public string GetOriginalPrice()
+        public double GetOriginalPrice()
         {
-            return SaleProductOldPrice.Text;
-        }
 
+            string originalprice = SaleProductOldPrice.Text;
+            var charsToRemove = new string[] { "$" };
+            foreach (var c in charsToRemove)
+            {
+                originalprice = originalprice.Replace(c, string.Empty);
+            }
+            return double.Parse(originalprice);
+        }
 
         public void SaleProductAddToBasket()
         {

@@ -1,44 +1,40 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using System;
-using System.Threading;
 using TechTalk.SpecFlow;
 using AngloAmericanTest.Pages;
-using AngloAmericanTest.Utils;
 
 namespace AngloAmericanTest.StepDefinitions
 {
     [Binding]
     public class BasketPageSteps
     {
-
-        private readonly BasePage _basePage;
         public IWebDriver _driver;
-        private readonly HomePage homePage;
         private BasketPage _basketpage;
-        private readonly SeleniumHelper _seleniumHelper;
         private readonly ScenarioContext _scenarioContext;
 
-        public BasketPageSteps(BasePage basePage, HomePage homePage, BasketPage basketpage, ScenarioContext scenarioContext, SeleniumHelper seleniumHelper)
+        public BasketPageSteps( BasketPage basketpage, ScenarioContext scenarioContext)
         {
-            _basePage = basePage;
-            this.homePage = homePage;
             _basketpage = basketpage;
-            _seleniumHelper = seleniumHelper;
             _scenarioContext = scenarioContext;
         }
-
-
 
         [Then(@"I should see the sale product is added in the basket")]
         public void ThenIShouldSeeTheSaleProductIsAddedInTheBasket()
         {
-            string saleprice = _scenarioContext["saleprice"].ToString();
-            string basketvalue =_basketpage.GetBasketPrice();
-            Assert.AreEqual(saleprice, basketvalue);
+            double flatShippingRate = 2.00;
+            double saleprice = double.Parse(_scenarioContext["saleprice"].ToString());
+            double basketvalue =_basketpage.GetBasketPrice();
+            Assert.AreEqual(saleprice+flatShippingRate, basketvalue);
         }
 
-
+        [Then(@"I should see the basket value is equal to sum of all product prices plus shipping costs")]
+        public void ThenIShouldSeeTheBasketValueIsEqualToSumOfAllProductPricesPlusShippingCosts()
+        {
+            double flatShippingRate = 2.00;
+            double totalprice = double.Parse(_scenarioContext["TotalPriceValue"].ToString());
+            double totalvalue = totalprice + flatShippingRate;
+            Assert.AreEqual(totalvalue, _basketpage.GetBasketPrice());
+        }
 
     }
 }

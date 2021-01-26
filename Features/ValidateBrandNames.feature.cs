@@ -106,30 +106,30 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
  testRunner.When("I read all the brands available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Brand Names"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Benefit"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Pantene"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "M·A·C"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Lancôme"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Gucci"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Giorgio Armani"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Dove"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Calvin Klein"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Bvlgari"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Sephora"});
 #line 7
- testRunner.Then("The brand names should match below list", ((string)(null)), table1, "Then ");
+ testRunner.Then("The brand names should match below list", ((string)(null)), table2, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
