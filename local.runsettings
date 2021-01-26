@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+	<TestRunParameters>
+		<Parameter name="WebDriverDirectory" value="C:\AngloAmericanTest\Drivers" />
+		<Parameter name="Browser" value="chrome" />
+		<Parameter name="URL" value="https://automationteststore.com/" />
+		<Parameter name="Password" value="Password@1234" />
+
+
+	</TestRunParameters>
+</RunSettings>
